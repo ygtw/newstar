@@ -1,0 +1,211 @@
+<html><STYLE>
+BODY {
+SCROLLBAR-FACE-COLOR: #f1eefe;
+ SCROLLBAR-HIGHLIGHT-COLOR: #5abaff;
+ SCROLLBAR-SHADOW-COLOR: #4cb5e2;
+ SCROLLBAR-3DLIGHT-COLOR: #2485ff;
+ SCROLLBAR-ARROW-COLOR: #1841c2;
+ SCROLLBAR-TRACK-COLOR: #ecefec;
+ SCROLLBAR-DARKSHADOW-COLOR: #2485ff;
+ SCROLLBAR-BASE-COLOR: #06a690
+}
+</STYLE>
+<!--彩色文字連結_開始-->
+<script language=JavaScript>
+<!--
+<!--在此修改文字閃爍速度-->
+var rate = 10;
+var obj;
+var act = 0;
+var elmH = 0;
+var elmS = 150;
+var elmV = 255;
+var clrOrg;
+var TimerID;
+if (navigator.appName.indexOf("Microsoft",0) != -1 && parseInt(navigator.appVersion) >= 4) {
+    Browser = true;
+} else {
+    Browser = false;
+}
+if (Browser) {
+    document.onmouseover = doRainbowAnchor;
+    document.onmouseout = stopRainbowAnchor;
+}
+function doRainbow()
+{
+    if (Browser && act != 1) {
+        act = 1;
+        obj = event.srcElement;
+        clrOrg = obj.style.color;
+        TimerID = setInterval("ChangeColor()",100);
+    }
+}
+function stopRainbow()
+{
+    if (Browser && act != 0) {
+        obj.style.color = clrOrg;
+        clearInterval(TimerID);
+        act = 0;
+    }
+}
+function doRainbowAnchor()
+{
+    if (Browser && act != 1) {
+        obj = event.srcElement;
+ 
+        while (obj.tagName != 'A' && obj.tagName != 'BODY') {
+            obj = obj.parentElement;
+            if (obj.tagName == 'A' || obj.tagName == 'BODY')
+                break;
+        }
+ 
+        if (obj.tagName == 'A' && obj.href != '') {
+            act = 1;
+            clrOrg = obj.style.color;
+            TimerID = setInterval("ChangeColor()",100);
+        }
+    }
+}
+function stopRainbowAnchor()
+{
+    if (Browser && act != 0) {
+        if (obj.tagName == 'A') {
+            obj.style.color = clrOrg;
+            clearInterval(TimerID);
+            act = 0;
+        }
+    }
+}
+function ChangeColor()
+{
+    obj.style.color = makeColor();
+}
+function makeColor()
+{
+    if (elmS == 0) {
+        elmR = elmV;    elmG = elmV;    elmB = elmV;
+    }
+    else {
+        t1 = elmV;
+        t2 = (255 - elmS) * elmV / 255;
+        t3 = elmH % 60;
+        t3 = (t1 - t2) * t3 / 60;
+ 
+        if (elmH < 60) {
+            elmR = t1;  elmB = t2;  elmG = t2 + t3;
+        }
+        else if (elmH < 120) {
+            elmG = t1;  elmB = t2;  elmR = t1 - t3;
+        }
+        else if (elmH < 180) {
+            elmG = t1;  elmR = t2;  elmB = t2 + t3;
+        }
+        else if (elmH < 240) {
+            elmB = t1;  elmR = t2;  elmG = t1 - t3;
+        }
+        else if (elmH < 300) {
+            elmB = t1;  elmG = t2;  elmR = t2 + t3;
+        }
+        else if (elmH < 360) {
+            elmR = t1;  elmG = t2;  elmB = t1 - t3;
+        }
+        else {
+            elmR = 0;   elmG = 0;   elmB = 0;
+        }
+    }
+    elmR = Math.floor(elmR);
+    elmG = Math.floor(elmG);
+    elmB = Math.floor(elmB);
+    clrRGB = '#' + elmR.toString(16) + elmG.toString(16) + elmB.toString(16);
+    elmH = elmH + rate;
+    if (elmH >= 360)
+        elmH = 0;
+    return clrRGB;
+}
+-->
+</script>
+<!--彩色文字連結_結束-->
+<SCRIPT LANGUAGE="JavaScript">
+</SCRIPT>
+
+<head><STYLE type=text/css>A:hover {
+cursor:crosshair
+}
+</STYLE>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>星晴小品+小鈞改版</title>
+<style type="text/css">
+</style>
+<style fprolloverstyle>A:hover {color: #008080; text-decoration: line-through; letter-spacing: 4pt; font-family: 新細明體; font-size: 9pt}
+</style>
+<base target="main1">
+</head>
+
+<body background="index-ing/index-background.gif" text="#000000" bgcolor="#FFFFFF" style="letter-spacing: 2pt; font-size:9 pt; vertical-align:baseline" vlink="#0000FF" alink="#000080" bgproperties="fixed">
+
+<font face="新細明體">
+
+<span style="letter-spacing:4">       
+
+   
+
+<p align="center">　</p>       
+
+   
+
+<p align="center">::選單:: </p>       
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<font face="新細明體">
+<a style="text-decoration: none; " target="main1" href="index-date.htm">首頁</a></font></p>       
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<font face="新細明體">
+<a style="text-decoration: none" href="about_me.htm">我是?</a></font></p>       
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<font face="新細明體">
+<a target="main1" style="text-decoration: none; " href="Love-pic.htm">圖文</a></font></p>       
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<font face="新細明體">
+<a target="main1" style="text-decoration:none" href="wallpaper.htm">背景</a></font></p>      
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<font face="新細明體">
+<a style="text-decoration: none" target="main1" href="other.htm">其他</a></font></p>      
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<span style="font-family: 新細明體">
+<a style="text-decoration: none" href="Download/Download.htm">下載</a></span></p>      
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<a href="myFTP.htm" style="text-decoration: none">
+<span style="font-family: 新細明體">分享</span></a></p>
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<font face="新細明體">
+<a style="text-decoration: none" href="Nice-Link.htm">鏈結</a></font></p>      
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<a href="garbage.htm" style="text-decoration: none">垃圾</a></p>      
+
+<p align="center" style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7">
+<span style="text-decoration: none">      
+
+<a target="_self" href="Opt-page2(old).htm" onclick="window.parent.main1.frames.location.href='LF2-About.htm';" style="text-decoration: none">小鈞改版</a></span>
+</p>
+<p align="center">::互動::</p>      
+<p align="center">
+<font face="新細明體">
+<a style="text-decoration: none" href="http://guestbook.com.tw/g83/gbook.php?applicant=n65c">
+留言冊</a></font></p>      
+<p align="center"><font face="新細明體"><a href="http://homecgi.kimo.com.tw/member/cgi-bin/forum.z?tid=lf230158882000@F1087600553&rand=1087601178&m=S" style="text-decoration: none">文章
+表</a></font></p>      
+
+<p align="center">::星晴::</p>      
+
+</span>

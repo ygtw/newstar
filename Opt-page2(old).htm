@@ -1,0 +1,203 @@
+<html><STYLE>
+BODY {
+SCROLLBAR-FACE-COLOR: #f1eefe;
+ SCROLLBAR-HIGHLIGHT-COLOR: #5abaff;
+ SCROLLBAR-SHADOW-COLOR: #4cb5e2;
+ SCROLLBAR-3DLIGHT-COLOR: #2485ff;
+ SCROLLBAR-ARROW-COLOR: #1841c2;
+ SCROLLBAR-TRACK-COLOR: #ecefec;
+ SCROLLBAR-DARKSHADOW-COLOR: #2485ff;
+ SCROLLBAR-BASE-COLOR: #06a690
+}
+</STYLE>
+<!--彩色文字連結_開始-->
+<script language=JavaScript>
+<!--
+<!--在此修改文字閃爍速度-->
+var rate = 10;
+var obj;
+var act = 0;
+var elmH = 0;
+var elmS = 150;
+var elmV = 255;
+var clrOrg;
+var TimerID;
+if (navigator.appName.indexOf("Microsoft",0) != -1 && parseInt(navigator.appVersion) >= 4) {
+    Browser = true;
+} else {
+    Browser = false;
+}
+if (Browser) {
+    document.onmouseover = doRainbowAnchor;
+    document.onmouseout = stopRainbowAnchor;
+}
+function doRainbow()
+{
+    if (Browser && act != 1) {
+        act = 1;
+        obj = event.srcElement;
+        clrOrg = obj.style.color;
+        TimerID = setInterval("ChangeColor()",100);
+    }
+}
+function stopRainbow()
+{
+    if (Browser && act != 0) {
+        obj.style.color = clrOrg;
+        clearInterval(TimerID);
+        act = 0;
+    }
+}
+function doRainbowAnchor()
+{
+    if (Browser && act != 1) {
+        obj = event.srcElement;
+ 
+        while (obj.tagName != 'A' && obj.tagName != 'BODY') {
+            obj = obj.parentElement;
+            if (obj.tagName == 'A' || obj.tagName == 'BODY')
+                break;
+        }
+ 
+        if (obj.tagName == 'A' && obj.href != '') {
+            act = 1;
+            clrOrg = obj.style.color;
+            TimerID = setInterval("ChangeColor()",100);
+        }
+    }
+}
+function stopRainbowAnchor()
+{
+    if (Browser && act != 0) {
+        if (obj.tagName == 'A') {
+            obj.style.color = clrOrg;
+            clearInterval(TimerID);
+            act = 0;
+        }
+    }
+}
+function ChangeColor()
+{
+    obj.style.color = makeColor();
+}
+function makeColor()
+{
+    if (elmS == 0) {
+        elmR = elmV;    elmG = elmV;    elmB = elmV;
+    }
+    else {
+        t1 = elmV;
+        t2 = (255 - elmS) * elmV / 255;
+        t3 = elmH % 60;
+        t3 = (t1 - t2) * t3 / 60;
+ 
+        if (elmH < 60) {
+            elmR = t1;  elmB = t2;  elmG = t2 + t3;
+        }
+        else if (elmH < 120) {
+            elmG = t1;  elmB = t2;  elmR = t1 - t3;
+        }
+        else if (elmH < 180) {
+            elmG = t1;  elmR = t2;  elmB = t2 + t3;
+        }
+        else if (elmH < 240) {
+            elmB = t1;  elmR = t2;  elmG = t1 - t3;
+        }
+        else if (elmH < 300) {
+            elmB = t1;  elmG = t2;  elmR = t2 + t3;
+        }
+        else if (elmH < 360) {
+            elmR = t1;  elmG = t2;  elmB = t1 - t3;
+        }
+        else {
+            elmR = 0;   elmG = 0;   elmB = 0;
+        }
+    }
+    elmR = Math.floor(elmR);
+    elmG = Math.floor(elmG);
+    elmB = Math.floor(elmB);
+    clrRGB = '#' + elmR.toString(16) + elmG.toString(16) + elmB.toString(16);
+    elmH = elmH + rate;
+    if (elmH >= 360)
+        elmH = 0;
+    return clrRGB;
+}
+-->
+</script>
+<!--彩色文字連結_結束-->
+<SCRIPT LANGUAGE="JavaScript">
+</SCRIPT>
+
+<head><STYLE type=text/css>A:hover {
+cursor:crosshair
+}
+</STYLE>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>星晴小品+小鈞改版</title>
+<style type="text/css">
+</style>
+<style fprolloverstyle>A:hover {color: #008080; text-decoration: line-through; letter-spacing: 4pt; font-family: 新細明體; font-size: 9pt}
+</style>
+<base target="main1">
+</head>
+
+<body background="index-ing/LF2-background.gif" text="#000000" bgcolor="#000000" style="letter-spacing: 2pt; font-size:9 pt; vertical-align:baseline" vlink="#0000FF" alink="#000080" bgproperties="fixed" topmargin="20">
+
+<p align="center"><font face="新細明體">
+<span style="letter-spacing:4"><!-- Yahoo!奇摩計數器 程式碼開始處 -->          
+</span></font></p>       
+
+<span style="letter-spacing: 4">
+
+<p align="center"><font face="新細明體" color="#FFFF00">::</font><font color="#FFFF00"><font size="3" face="標楷體">改版</font><font face="新細明體">::</font></font></p>
+
+<p align="center" style="line-height: 200%; word-spacing: 2; margin-top: 7; margin-bottom: 7">
+<a style="text-decoration: none" href="LF2-all-about.htm">
+<font face="新細明體" color="#FFFFFF">原作</font></a></p>
+
+<p align="center" style="line-height: 200%; word-spacing: 2; margin-top: 7; margin-bottom: 7">
+<font face="新細明體">
+<a style="text-decoration: none" href="LF2-producer.htm"><font color="#FFFFFF">製作</font></a></font></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<font face="新細明體">
+<a style="text-decoration: none" href="LF2-About.htm"><font color="#FFFFFF">關於</font></a></font></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<font face="新細明體">
+<a style="text-decoration: none" href="LF2-ing(s)/LF2-ing.htm">
+<font color="#FFFFFF">畫面</font></a></font></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<a href="LF2-teach(s)/LF2-teach.htm" style="text-decoration: none">
+<font face="新細明體" color="#FFFFFF">問答</font></a></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<font face="新細明體">
+<a style="text-decoration: none" href="LF2-weapon(s)/LF2-weapon.htm">
+<font color="#FFFFFF">道具</font></a></font></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<font face="新細明體">
+<a style="text-decoration: none" href="LF2-DJA.htm"><font color="#FFFFFF">招式</font></a></font></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<font face="新細明體"><a href="W(s)/LF2-W.htm" style="text-decoration: none">
+<font color="#FFFFFF">背景</font></a></font></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<font face="新細明體">
+<a style="text-decoration: none" href="LF2-conie.htm"><font color="#FFFFFF">漫畫</font></a></font></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<font face="新細明體">
+<a style="text-decoration: none" href="LF2-Download.htm"><font color="#FFFFFF">下載</font></a></font></p>
+<p style="word-spacing: 2; line-height: 200%; margin-top: 7; margin-bottom: 7" align="center">
+<font face="新細明體">
+<a target="_self" href="Opt-page.htm" onclick="window.parent.main1.frames.location.href='index-date.htm';" style="text-decoration: none">
+<font color="#FFFFFF">星晴小品</font></a><font color="#FFFFFF"> </font>
+
+<p align="center"><font color="#FFFF00">::</font><font face="新細明體" color="#FFFF00">互動::</font></p>      
+<p align="center">
+<strike>
+<font color="#FFFFFF" face="新細明體">留言
+簿</font></strike></p>      
+
+<p align="center"><font color="#FFFF00">::</font><font face="新細明體" color="#FFFF00">改版::</font></p>      
+
+</span>

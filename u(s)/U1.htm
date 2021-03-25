@@ -1,0 +1,123 @@
+<html>
+<script language="JavaScript1.2">
+function high(which2){
+theobject=which2
+if (window.downlighting) clearInterval(downlighting)
+highlighting=setInterval("highlightit(theobject)",50)
+}
+function low(which2){
+clearInterval(highlighting)
+theobject=which2
+downlighting=setInterval("downlightit(theobject)",50)
+}
+function highlightit(cur2){
+if (cur2.filters.alpha.opacity<100)
+cur2.filters.alpha.opacity+=5
+else if (window.highlighting)
+clearInterval(highlighting)
+}
+function downlightit(cur2){
+if (cur2.filters.alpha.opacity>40)
+cur2.filters.alpha.opacity-=20 //修改滑鼠移開圖示後的亮度，數字越小就越亮
+else if (window.downlightit)
+clearInterval(downlighting)
+}
+</script>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>摯誼ㄉ投票</title>
+</head>
+
+<body background="http://home.pchome.com.tw/good/lf23015888/3f5465e56bd0844b8f58d59d61a6ba98.gif">
+
+<span style="text-indent: 0px; line-height: 24px">
+<table>
+  <tr>
+    <td colSpan="2"><b>發&nbsp;起&nbsp;人</b>：├達官顯貴┐〞 (lf230158882000)</td>
+  </tr>
+  <tr>
+    <td colSpan="2"><b>主　　題：</b>&nbsp;&nbsp;妳(你)覺得摯誼如何ㄋ?</td>
+  </tr>
+  <tr>
+    <td vAlign="top" noWrap align="left"><b>投票說明：</b></td>
+    <td vAlign="top" align="left" width="100%">喜歡哪一張ㄋ^^?</td>
+  </tr>
+  <tr>
+    <td colSpan="2"><b>投票期間：</b>&nbsp;&nbsp;2004/06/07 ~ 2004/07/01</td>
+  </tr>
+  <tr>
+    <td colSpan="2"><b>投票人數：</b>&nbsp;&nbsp;20</td>
+  </tr>
+</table>
+<!-- --VOTE CHART BEGIN---->
+<!-- --LIST BRGIN---->
+<table cellSpacing="0" cellPadding="0" width="100%" bgColor="#d1e2c9" border="0">
+  <tr>
+    <td vAlign="top" align="left">
+    <table cellSpacing="1" cellPadding="4" width="100%" border="0">
+      <tr bgColor="#ffffe8">
+        <td vAlign="top" noWrap align="left"><span class="T1">名 次</span></td>
+        <td vAlign="top" noWrap align="left"><span class="T1">選 票 名 稱</span></td>
+        <td vAlign="top" noWrap align="left"><span class="T1">百 分 比</span></td>
+        <td vAlign="top" noWrap align="left"><span class="T1">比 例 圖</span></td>
+        <td vAlign="top" noWrap align="left"><span class="T1">得 票 數</span></td>
+      </tr>
+      <tr bgColor="#ffffff">
+        <td vAlign="top" align="left">1</td>
+        <td vAlign="top" align="left">都超讚ㄌ&gt;&quot;&lt;</td>
+        <td vAlign="top" align="right">40.62%</td>
+        <td vAlign="top" align="left">
+        <img height="10" src="http://tw.yimg.com/i/tw/club/dot_p01.gif" width="40.62%"></td>
+        <td vAlign="top" align="right">13</td>
+      </tr>
+      <tr bgColor="#ffffff">
+        <td vAlign="top" align="left">2</td>
+        <td vAlign="top" align="left">都還好啦~</td>
+        <td vAlign="top" align="right">21.88%</td>
+        <td vAlign="top" align="left">
+        <img height="10" src="http://tw.yimg.com/i/tw/club/dot_p01.gif" width="21.88%"></td>
+        <td vAlign="top" align="right">7</td>
+      </tr>
+      <tr bgColor="#ffffff">
+        <td vAlign="top" align="left">3</td>
+        <td vAlign="top" align="left">潔淨白好看~</td>
+        <td vAlign="top" align="right">18.75%</td>
+        <td vAlign="top" align="left">
+        <img height="10" src="http://tw.yimg.com/i/tw/club/dot_p01.gif" width="18.75%"></td>
+        <td vAlign="top" align="right">6</td>
+      </tr>
+      <tr bgColor="#ffffff">
+        <td vAlign="top" align="left">4</td>
+        <td vAlign="top" align="left">全都爛貨..</td>
+        <td vAlign="top" align="right">9.38%</td>
+        <td vAlign="top" align="left">
+        <img height="10" src="http://tw.yimg.com/i/tw/club/dot_p01.gif" width="9.38%"></td>
+        <td vAlign="top" align="right">3</td>
+      </tr>
+      <tr bgColor="#ffffff">
+        <td vAlign="top" align="left">5</td>
+        <td vAlign="top" align="left">中立灰好看~</td>
+        <td vAlign="top" align="right">6.25%</td>
+        <td vAlign="top" align="left">
+        <img height="10" src="http://tw.yimg.com/i/tw/club/dot_p01.gif" width="6.25%"></td>
+        <td vAlign="top" align="right">2</td>
+      </tr>
+      <tr bgColor="#ffffff">
+        <td vAlign="top" align="left">6</td>
+        <td vAlign="top" align="left">泡泡黑好看~</td>
+        <td vAlign="top" align="right">3.12%</td>
+        <td vAlign="top" align="left">
+        <img height="10" src="http://tw.yimg.com/i/tw/club/dot_p01.gif" width="3.12%"></td>
+        <td vAlign="top" align="right">1</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+<!-- --VOTE CHART END---->
+<!-- --VOTE CONTENT END----></span></body>
+
+</html>
