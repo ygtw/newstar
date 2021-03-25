@@ -1,73 +1,73 @@
 <!--
 //
-// ¡½ ³]©w¼½©ñ²M³æ¤º®e
+// â–  è¨­å®šæ’­æ”¾æ¸…å–®å…§å®¹
 //
-//   §¹¾ãªº³]©w®æ¦¡: mkList("´CÅéÀÉ®×¦ì¸m","´CÅé¼ÐÃD","¦r¹õÀÉ®×¦ì¸m","­áµ²ºX¼Ð(f)");
-//   ¤@¯ëªº³]©w®æ¦¡: mkList("´CÅéÀÉ®×¦ì¸m","´CÅé¼ÐÃD");
-// ¹w³]¤£¼½©ñ¬Y¶µ¥Ø: mkList("´CÅéÀÉ®×¦ì¸m","´CÅé¼ÐÃD","", "f");
-// ¦Û°Ê¨ú±o´CÅé¸ê°T: mkList("´CÅéÀÉ®×¦ì¸m");
+//   å®Œæ•´çš„è¨­å®šæ ¼å¼: mkList("åª’é«”æª”æ¡ˆä½ç½®","åª’é«”æ¨™é¡Œ","å­—å¹•æª”æ¡ˆä½ç½®","å‡çµæ——æ¨™(f)");
+//   ä¸€èˆ¬çš„è¨­å®šæ ¼å¼: mkList("åª’é«”æª”æ¡ˆä½ç½®","åª’é«”æ¨™é¡Œ");
+// é è¨­ä¸æ’­æ”¾æŸé …ç›®: mkList("åª’é«”æª”æ¡ˆä½ç½®","åª’é«”æ¨™é¡Œ","", "f");
+// è‡ªå‹•å–å¾—åª’é«”è³‡è¨Š: mkList("åª’é«”æª”æ¡ˆä½ç½®");
 //
-// ¡°µù1: ²Ä¤G­Ó³]©w­È(´CÅé¼ÐÃD)¤@¯ëªº®æ¦¡¬O¡uºt¥XªÌ - ¦±¥Ø¼ÐÃD¡v¡C
-// ¡°µù2: ²Ä¥|­Ó³]©w­È(­áµ²ºX¼Ð/Frozen Flag)¬O¥H f ¦r¤¸¨Óªí¥Ü¹w³]¤£¿ï¨ú¼½©ñ¦¹´CÅéÀÉ®×¡C
+// â€»è¨»1: ç¬¬äºŒå€‹è¨­å®šå€¼(åª’é«”æ¨™é¡Œ)ä¸€èˆ¬çš„æ ¼å¼æ˜¯ã€Œæ¼”å‡ºè€… - æ›²ç›®æ¨™é¡Œã€ã€‚
+// â€»è¨»2: ç¬¬å››å€‹è¨­å®šå€¼(å‡çµæ——æ¨™/Frozen Flag)æ˜¯ä»¥ f å­—å…ƒä¾†è¡¨ç¤ºé è¨­ä¸é¸å–æ’­æ”¾æ­¤åª’é«”æª”æ¡ˆã€‚
 
-// ³]©w¼½©ñ²M³æ¶µ¥Ø®É¡A½Ðª`·N¥H¤U¦U¶µ¡G
+// è¨­å®šæ’­æ”¾æ¸…å–®é …ç›®æ™‚ï¼Œè«‹æ³¨æ„ä»¥ä¸‹å„é …ï¼š
 //
-//    1. ¦pªG±z¨Ï¥Î¬Û¹ï¸ô®|(Relative Path)ªº¤è¦¡¨Ó³]©wÀÉ®×¦ì¸m¡A½Ð³Ì¦n¦b³sµ²«e­±¨Ï¥Î¦p ./ ©Î ../ ¨Ó¥Ü·N¥Ø«e
-//       ©Ò¦bªº¸ê®Æ§¨¡C·í±z¥Hµ´¹ï¸ô®|(Absolute Path)ªº¤è¦¡¨Ó³]©w³sµ²®É¡A°£¤F http:// ©Î ftp:// ¤§¥~¡A±z¤]¥i
-//       ¨Ï¥Î¦p mms:// ©Î rtsp:// ³o¨Ç¦ê¬y³B²z´CÅéªº³q°T¨ó©w¡C
+//    1. å¦‚æžœæ‚¨ä½¿ç”¨ç›¸å°è·¯å¾‘(Relative Path)çš„æ–¹å¼ä¾†è¨­å®šæª”æ¡ˆä½ç½®ï¼Œè«‹æœ€å¥½åœ¨é€£çµå‰é¢ä½¿ç”¨å¦‚ ./ æˆ– ../ ä¾†ç¤ºæ„ç›®å‰
+//       æ‰€åœ¨çš„è³‡æ–™å¤¾ã€‚ç•¶æ‚¨ä»¥çµ•å°è·¯å¾‘(Absolute Path)çš„æ–¹å¼ä¾†è¨­å®šé€£çµæ™‚ï¼Œé™¤äº† http:// æˆ– ftp:// ä¹‹å¤–ï¼Œæ‚¨ä¹Ÿå¯
+//       ä½¿ç”¨å¦‚ mms:// æˆ– rtsp:// é€™äº›ä¸²æµè™•ç†åª’é«”çš„é€šè¨Šå”å®šã€‚
 //
-//    2. ¦pªG±z·Q­n¨Ï¥Î¦r¹õ¥\¯à¡A´CÅé¶µ¥Øªº²Ä¤@­Ó³]©w­È(´CÅéÀÉ®×¦ì¸m)©Î²Ä¤T­Ó³]©w­È(¦r¹õÀÉ®×¦ì¸m)¨ä¤¤¤@¶µ¡A
-//       ¥²¶·¨Ï¥Îµ´¹ï¸ô®|ªº¤è¦¡¨Ó³]©w³sµ²¡A§_«h¦r¹õ¥\¯à¥u·|¦b¥»¾÷¹B§@¡A¦Ó¦b»·ºÝ¦øªA¾¹«o¥¢®Äªº¡C¦¹¥~¡A»P´CÅé
-//       ÀÉ®×¬Û³sªº¦r¹õÀÉ®×¡A³Ì¦n­n²Å¦X³o¨â­Ó±ø¥ó¡G 1.¦s©ñ¦b¬Û¦Pªº¸ê®Æ§¨¡F 2.¥H¬Û¦PªºÀÉ¦W¨Ó©R¦W¡C¨Ò¦p¡G´CÅé
-//       ÀÉ¦W¬° xyz.wmv ´N¨Ï¥Î xyz.smi ªº¦r¹õÀÉ®×¡C°²¦p¦r¹õÀÉ¦W¸ò´CÅéÀÉ¦W¤£¤@¼Ë¡A±z¥²¶·¦b¼½©ñ²M³æ¶µ¥Ø³]©w¤¤
-//       ¥[¤J²Ä¤T­Ó³]©w­È(¦r¹õÀÉ®×¦ì¸m)¡A¦ý¤ð¶·¥[¤J¸ô®|¡C¥H¤Uªº³]©w½d¨Ò»¡©ú¤F¤W­z¦UÂI¡G
+//    2. å¦‚æžœæ‚¨æƒ³è¦ä½¿ç”¨å­—å¹•åŠŸèƒ½ï¼Œåª’é«”é …ç›®çš„ç¬¬ä¸€å€‹è¨­å®šå€¼(åª’é«”æª”æ¡ˆä½ç½®)æˆ–ç¬¬ä¸‰å€‹è¨­å®šå€¼(å­—å¹•æª”æ¡ˆä½ç½®)å…¶ä¸­ä¸€é …ï¼Œ
+//       å¿…é ˆä½¿ç”¨çµ•å°è·¯å¾‘çš„æ–¹å¼ä¾†è¨­å®šé€£çµï¼Œå¦å‰‡å­—å¹•åŠŸèƒ½åªæœƒåœ¨æœ¬æ©Ÿé‹ä½œï¼Œè€Œåœ¨é ç«¯ä¼ºæœå™¨å»å¤±æ•ˆçš„ã€‚æ­¤å¤–ï¼Œèˆ‡åª’é«”
+//       æª”æ¡ˆç›¸é€£çš„å­—å¹•æª”æ¡ˆï¼Œæœ€å¥½è¦ç¬¦åˆé€™å…©å€‹æ¢ä»¶ï¼š 1.å­˜æ”¾åœ¨ç›¸åŒçš„è³‡æ–™å¤¾ï¼› 2.ä»¥ç›¸åŒçš„æª”åä¾†å‘½åã€‚ä¾‹å¦‚ï¼šåª’é«”
+//       æª”åç‚º xyz.wmv å°±ä½¿ç”¨ xyz.smi çš„å­—å¹•æª”æ¡ˆã€‚å‡å¦‚å­—å¹•æª”åè·Ÿåª’é«”æª”åä¸ä¸€æ¨£ï¼Œæ‚¨å¿…é ˆåœ¨æ’­æ”¾æ¸…å–®é …ç›®è¨­å®šä¸­
+//       åŠ å…¥ç¬¬ä¸‰å€‹è¨­å®šå€¼(å­—å¹•æª”æ¡ˆä½ç½®)ï¼Œä½†æ¯‹é ˆåŠ å…¥è·¯å¾‘ã€‚ä»¥ä¸‹çš„è¨­å®šç¯„ä¾‹èªªæ˜Žäº†ä¸Šè¿°å„é»žï¼š
 //
-//         ¨Ò1: mkList("http://mydomain.com/exobud/video/xyz.wmv","§Úªº¥Í¬¡¤ù¬q");
-//              ¸Ñ»¡ - ¦r¹õÀÉ®× xyz.smi ¦s©ñ¦b¬Û¦Pªº¸ê®Æ§¨¡A«h¤ð¶·³]©w¡u¦r¹õÀÉ®×¦ì¸m¡v¡C
-//         ¨Ò2: mkList("http://mydomain.com/exobud/video/xyz.wmv","§Úªº¥Í¬¡¤ù¬q","abc.smi");
-//              ¸Ñ»¡ - ¦r¹õÀÉ®×¦s©ñ¦b¬Û¦Pªº¸ê®Æ§¨¡A¦ýÀÉ¦W¦³§O¡A¶·³]©w¦r¹õÀÉ¦W¡C
-//         ¨Ò3: mkList("./music/xyz.wma","ºt¥XªÌ - ºq¦W","http://others.net/lyric/xyz.smi");
-//              ¸Ñ»¡ - ¦r¹õÀÉ®×¦s©ñ¦b¤£¦Pªº¥D¾÷¡A¥²¶·¨Ï¥Îµ´¹ï¸ô®|ªº¤è¦¡¨Ó³]©w¡u¦r¹õÀÉ®×¦ì¸m¡v¡C
-//         ¨Ò4: mkList("http://others.net/music/xyz.wma","ºt¥XªÌ - ºq¦W");
-//              ¸Ñ»¡ - ´CÅéÀÉ®×»P¦r¹õÀÉ®×­Ñ¦s©ñ¦b¤£¦Pªº¥D¾÷¡A¦P®É¤S²Å¦X¬Û¦P¸ê®Æ§¨¤ÎÀÉ¦Wªº±ø¥ó¡C
+//         ä¾‹1: mkList("http://mydomain.com/exobud/video/xyz.wmv","æˆ‘çš„ç”Ÿæ´»ç‰‡æ®µ");
+//              è§£èªª - å­—å¹•æª”æ¡ˆ xyz.smi å­˜æ”¾åœ¨ç›¸åŒçš„è³‡æ–™å¤¾ï¼Œå‰‡æ¯‹é ˆè¨­å®šã€Œå­—å¹•æª”æ¡ˆä½ç½®ã€ã€‚
+//         ä¾‹2: mkList("http://mydomain.com/exobud/video/xyz.wmv","æˆ‘çš„ç”Ÿæ´»ç‰‡æ®µ","abc.smi");
+//              è§£èªª - å­—å¹•æª”æ¡ˆå­˜æ”¾åœ¨ç›¸åŒçš„è³‡æ–™å¤¾ï¼Œä½†æª”åæœ‰åˆ¥ï¼Œé ˆè¨­å®šå­—å¹•æª”åã€‚
+//         ä¾‹3: mkList("./music/xyz.wma","æ¼”å‡ºè€… - æ­Œå","http://others.net/lyric/xyz.smi");
+//              è§£èªª - å­—å¹•æª”æ¡ˆå­˜æ”¾åœ¨ä¸åŒçš„ä¸»æ©Ÿï¼Œå¿…é ˆä½¿ç”¨çµ•å°è·¯å¾‘çš„æ–¹å¼ä¾†è¨­å®šã€Œå­—å¹•æª”æ¡ˆä½ç½®ã€ã€‚
+//         ä¾‹4: mkList("http://others.net/music/xyz.wma","æ¼”å‡ºè€… - æ­Œå");
+//              è§£èªª - åª’é«”æª”æ¡ˆèˆ‡å­—å¹•æª”æ¡ˆä¿±å­˜æ”¾åœ¨ä¸åŒçš„ä¸»æ©Ÿï¼ŒåŒæ™‚åˆç¬¦åˆç›¸åŒè³‡æ–™å¤¾åŠæª”åçš„æ¢ä»¶ã€‚
 //
-//    3. ¨Ï¥Î¥þ­^¤å¤p¼g¥b§Î¦r¤¸ªºÀÉ®×¸ô®|¥Ã»·¬O³Ì«OÀIªº°µªk¡A¦]¬°¥i¥H«OÃÒ¦b¤j³¡¥÷±¡ªp¤U³£¯à°÷¥¿±`Åª¨ú³sµ²¡C
-//       ½ÐºÉ¶qÁ×§K¨Ï¥Î¥]§tÂù¦r¸`¦r¤¸ (¨Ò¦p¤¤¤å¦r©ÎÁú¤å¦r) ¡B¯S®í¦r¤¸©Î¥b§ÎªÅ¥Õªº³sµ²¡F¦pªG¥i¥Hªº¸Ü¡A¦b³]©w
-//       ³sµ²®É¡A³Ì¦n±N³o¨Ç¤å¦rÂà´«¦¨¡y¢H±±¨î½X¡z¡A¨Ò¦p±N¥b§ÎªÅ¥Õ¼g¦¨ %20 ¡C
+//    3. ä½¿ç”¨å…¨è‹±æ–‡å°å¯«åŠå½¢å­—å…ƒçš„æª”æ¡ˆè·¯å¾‘æ°¸é æ˜¯æœ€ä¿éšªçš„åšæ³•ï¼Œå› ç‚ºå¯ä»¥ä¿è­‰åœ¨å¤§éƒ¨ä»½æƒ…æ³ä¸‹éƒ½èƒ½å¤ æ­£å¸¸è®€å–é€£çµã€‚
+//       è«‹ç›¡é‡é¿å…ä½¿ç”¨åŒ…å«é›™å­—ç¯€å­—å…ƒ (ä¾‹å¦‚ä¸­æ–‡å­—æˆ–éŸ“æ–‡å­—) ã€ç‰¹æ®Šå­—å…ƒæˆ–åŠå½¢ç©ºç™½çš„é€£çµï¼›å¦‚æžœå¯ä»¥çš„è©±ï¼Œåœ¨è¨­å®š
+//       é€£çµæ™‚ï¼Œæœ€å¥½å°‡é€™äº›æ–‡å­—è½‰æ›æˆã€Žï¼…æŽ§åˆ¶ç¢¼ã€ï¼Œä¾‹å¦‚å°‡åŠå½¢ç©ºç™½å¯«æˆ %20 ã€‚
 //
-//    4. ·í±z¦b³]©w´CÅé¼ÐÃD®É¡A¥i¯à·|¹J¤W¤@¨Ç¸òÁcÅé¤¤¤å (Big5) ¤£¦P»y¨tªº¤å¦r¡A¨Ò¦pÁú¤å©Î¤é¤å¡C¦pªG±z¨M©w­n
-//       «O¯d´CÅé­ì¥»ªº»y¤å°µ¬°´CÅé¼ÐÃD¡A½Ð¥ý±N³o¨Ç¤å¦rÂà´«¦¨¹³ &#12345; ªº¡y¡®±±¨î½X¡z(§YUnicode/¸U°ê½X)¡A
-//       µM«á¤~¦n¼g¨ì´CÅé¼ÐÃDªº³]©w­È¸Ì¥h¡A§_«h³o¨Ç¥~»y¤å¦r¬OµLªk¦b¼½©ñ­±ªO©Î¼½©ñ²M³æ¤W¥¿½TÅã¥Ü¥X¨Óªº¡C
+//    4. ç•¶æ‚¨åœ¨è¨­å®šåª’é«”æ¨™é¡Œæ™‚ï¼Œå¯èƒ½æœƒé‡ä¸Šä¸€äº›è·Ÿç¹é«”ä¸­æ–‡ (Big5) ä¸åŒèªžç³»çš„æ–‡å­—ï¼Œä¾‹å¦‚éŸ“æ–‡æˆ–æ—¥æ–‡ã€‚å¦‚æžœæ‚¨æ±ºå®šè¦
+//       ä¿ç•™åª’é«”åŽŸæœ¬çš„èªžæ–‡åšç‚ºåª’é«”æ¨™é¡Œï¼Œè«‹å…ˆå°‡é€™äº›æ–‡å­—è½‰æ›æˆåƒ ã€¹ çš„ã€Žï¼†æŽ§åˆ¶ç¢¼ã€(å³Unicode/è¬åœ‹ç¢¼)ï¼Œ
+//       ç„¶å¾Œæ‰å¥½å¯«åˆ°åª’é«”æ¨™é¡Œçš„è¨­å®šå€¼è£¡åŽ»ï¼Œå¦å‰‡é€™äº›å¤–èªžæ–‡å­—æ˜¯ç„¡æ³•åœ¨æ’­æ”¾é¢æ¿æˆ–æ’­æ”¾æ¸…å–®ä¸Šæ­£ç¢ºé¡¯ç¤ºå‡ºä¾†çš„ã€‚
 //
-//    5. ¦pªG±z¨Ï¥Î¥H¡u¦Û°Ê¨ú±o´CÅé¸ê°T¡vªº¤è¦¡¨ÓÅª¨ú´CÅé¼ÐÃDªº¸ê°T¡A§Y¦b¼½©ñ²M³æ¶µ¥Ø¸Ì¥u¶ñ¼g´CÅéÀÉ®×¦ì¸m¡A
-//       ´CÅé¼ÐÃD«h¹w³]Åã¥Ü¬°¡u¥¼«ü©w´CÅé¼ÐÃD(µ¥«Ý¦Û°Ê¨ú±o´CÅé¸ê°T)¡v¡C¦b·Ç³Æ¶}©l¼½©ñ¸Ó¦±¥Ø®É¡Aµ{¦¡¤~·|Åª¨ú
-//       ´CÅé¸ê°T¡AµM«á¦b¼½©ñ­±ªO¤Î¼½©ñ²M³æÅã¥Ü¥X¨Ó¡C(·í¼½©ñ¾¹©Ò¦bªº­¶­±­«·s¾ã²z«á¡A«K·|¦^´_¨ì­ì¨Óªºª¬ºA¡C)
+//    5. å¦‚æžœæ‚¨ä½¿ç”¨ä»¥ã€Œè‡ªå‹•å–å¾—åª’é«”è³‡è¨Šã€çš„æ–¹å¼ä¾†è®€å–åª’é«”æ¨™é¡Œçš„è³‡è¨Šï¼Œå³åœ¨æ’­æ”¾æ¸…å–®é …ç›®è£¡åªå¡«å¯«åª’é«”æª”æ¡ˆä½ç½®ï¼Œ
+//       åª’é«”æ¨™é¡Œå‰‡é è¨­é¡¯ç¤ºç‚ºã€ŒæœªæŒ‡å®šåª’é«”æ¨™é¡Œ(ç­‰å¾…è‡ªå‹•å–å¾—åª’é«”è³‡è¨Š)ã€ã€‚åœ¨æº–å‚™é–‹å§‹æ’­æ”¾è©²æ›²ç›®æ™‚ï¼Œç¨‹å¼æ‰æœƒè®€å–
+//       åª’é«”è³‡è¨Šï¼Œç„¶å¾Œåœ¨æ’­æ”¾é¢æ¿åŠæ’­æ”¾æ¸…å–®é¡¯ç¤ºå‡ºä¾†ã€‚(ç•¶æ’­æ”¾å™¨æ‰€åœ¨çš„é é¢é‡æ–°æ•´ç†å¾Œï¼Œä¾¿æœƒå›žå¾©åˆ°åŽŸä¾†çš„ç‹€æ…‹ã€‚)
 //
-//    6. ¦]¬°¥»µ{¦¡¬O§Q¥Î·L³nªº Windows Media Player °µ¬°«á¥x¼½©ñµ{¦¡¡A©Ò¥H¨Ã¤£¤ä´©¥H .ra .rm .rv .ram ³o¨Ç
-//       ¥Ñ RealNetworks ¨î­qªº´CÅé®æ¦¡¨Ó¼½©ñ­µ°T©Îµø°T¤º®e¡C½Ð¤£­n¦b¼½©ñ²M³æ¶µ¥Ø¤¤¥[¤J³o¨Ç´CÅéÀÉ®×¡C¥t¥~¡A
-//       ¥»µ{¦¡ÁöµM¤ä´©·L³n³Ì·s¶}µoªº¡uWindows Media ¼½©ñ²M³æ¡vÀÉ®×®æ¦¡ (°ÆÀÉ¦W¬° .wpl)¡A¦ý¬O¦]¬°¦¹®æ¦¡©|¥¼
-//       ¶}µo¦¨¼ô¡A¦Ó¥»µ{¦¡¹ï¦¹®æ¦¡ªº¤ä´©¥i¯à¤£°÷§¹¥þ¡A©Ò¥H«ØÄ³¨Ï¥ÎªÌÀ³Á×§K¨Ï¥Î³oºØÀÉ®×¨Ó»s§@¼½©ñ²M³æ¡A°£«D
-//       ±z¬O¥»µ{¦¡ªº¶}µo¤H­û¡þ­±ªO»s§@ªÌ¡A©Î¹ïµ{¦¡¹B§@¤w¦³²`¤J¤F¸Ñ¡C
+//    6. å› ç‚ºæœ¬ç¨‹å¼æ˜¯åˆ©ç”¨å¾®è»Ÿçš„ Windows Media Player åšç‚ºå¾Œå°æ’­æ”¾ç¨‹å¼ï¼Œæ‰€ä»¥ä¸¦ä¸æ”¯æ´ä»¥ .ra .rm .rv .ram é€™äº›
+//       ç”± RealNetworks åˆ¶è¨‚çš„åª’é«”æ ¼å¼ä¾†æ’­æ”¾éŸ³è¨Šæˆ–è¦–è¨Šå…§å®¹ã€‚è«‹ä¸è¦åœ¨æ’­æ”¾æ¸…å–®é …ç›®ä¸­åŠ å…¥é€™äº›åª’é«”æª”æ¡ˆã€‚å¦å¤–ï¼Œ
+//       æœ¬ç¨‹å¼é›–ç„¶æ”¯æ´å¾®è»Ÿæœ€æ–°é–‹ç™¼çš„ã€ŒWindows Media æ’­æ”¾æ¸…å–®ã€æª”æ¡ˆæ ¼å¼ (å‰¯æª”åç‚º .wpl)ï¼Œä½†æ˜¯å› ç‚ºæ­¤æ ¼å¼å°šæœª
+//       é–‹ç™¼æˆç†Ÿï¼Œè€Œæœ¬ç¨‹å¼å°æ­¤æ ¼å¼çš„æ”¯æ´å¯èƒ½ä¸å¤ å®Œå…¨ï¼Œæ‰€ä»¥å»ºè­°ä½¿ç”¨è€…æ‡‰é¿å…ä½¿ç”¨é€™ç¨®æª”æ¡ˆä¾†è£½ä½œæ’­æ”¾æ¸…å–®ï¼Œé™¤éž
+//       æ‚¨æ˜¯æœ¬ç¨‹å¼çš„é–‹ç™¼äººå“¡ï¼é¢æ¿è£½ä½œè€…ï¼Œæˆ–å°ç¨‹å¼é‹ä½œå·²æœ‰æ·±å…¥çž­è§£ã€‚
 
-// ùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùù
-//            ¥H¤U¬°¼Ë¥»¼½©ñ²M³æªº¤º®e¡A½Ð¦b³]©w±zªº¥¿¦¡¼½©ñ²M³æ§¹²¦«á¡A±N¦¹³¡¥÷§R°£©Îµù¸Ñ°_¨Ó¡C 
-// ùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùù
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+//            ä»¥ä¸‹ç‚ºæ¨£æœ¬æ’­æ”¾æ¸…å–®çš„å…§å®¹ï¼Œè«‹åœ¨è¨­å®šæ‚¨çš„æ­£å¼æ’­æ”¾æ¸…å–®å®Œç•¢å¾Œï¼Œå°‡æ­¤éƒ¨ä»½åˆªé™¤æˆ–è¨»è§£èµ·ä¾†ã€‚ 
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-// ¥H¤W©Ò¦³¶}ÀY¬° http:// ªº¦ê¬y­µ¼ÖÀÉ®×³sµ²¡A³£¬O¥ÑÁú°êªº¤@¨Çºô¸ô­µ¼Ö¤À¨ÉªÀ°Ï§K¶O´£¨Ñªº¡C
-// ·í±z¼½©ñ³o¨Ç¦±¥Øªº®É­Ô¡A¨Ã¤£¤@©w«OÃÒ¤W¦Cªº¦ê¬y­µ¼ÖÀÉ®×³sµ²¡A¥þ³¡³£¯à°÷¥¿±`³s½u¡A¥ç¤£±Æ°£ÀÉ®×¦ì¸m¤wÅÜ§ó¡C
+// ä»¥ä¸Šæ‰€æœ‰é–‹é ­ç‚º http:// çš„ä¸²æµéŸ³æ¨‚æª”æ¡ˆé€£çµï¼Œéƒ½æ˜¯ç”±éŸ“åœ‹çš„ä¸€äº›ç¶²è·¯éŸ³æ¨‚åˆ†äº«ç¤¾å€å…è²»æä¾›çš„ã€‚
+// ç•¶æ‚¨æ’­æ”¾é€™äº›æ›²ç›®çš„æ™‚å€™ï¼Œä¸¦ä¸ä¸€å®šä¿è­‰ä¸Šåˆ—çš„ä¸²æµéŸ³æ¨‚æª”æ¡ˆé€£çµï¼Œå…¨éƒ¨éƒ½èƒ½å¤ æ­£å¸¸é€£ç·šï¼Œäº¦ä¸æŽ’é™¤æª”æ¡ˆä½ç½®å·²è®Šæ›´ã€‚
 
-// ùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùù
-//          ±z¥i¥H¦b¤U­±ªÅ¥Õªº¦a¤è ( ³]©w¤º®e¥²¶·¼g¦b //--> ¼Ð°O¤§«e )¡A¶}©l³]©w±zªº¥¿¦¡¼½©ñ²M³æ¡C
-// ùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùù
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+//          æ‚¨å¯ä»¥åœ¨ä¸‹é¢ç©ºç™½çš„åœ°æ–¹ ( è¨­å®šå…§å®¹å¿…é ˆå¯«åœ¨ //--> æ¨™è¨˜ä¹‹å‰ )ï¼Œé–‹å§‹è¨­å®šæ‚¨çš„æ­£å¼æ’­æ”¾æ¸…å–®ã€‚
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 // [T1] 
-mkList("http://w13.loxa.com.tw/fxm20144/sunset.wma","[Wma] ¶À©ü¾å");
+mkList("http://w13.loxa.com.tw/fxm20144/sunset.wma","[Wma] é»ƒæ˜æ›‰");
 // [T1] 
 mkList("http://aqswdefrgt.myweb.hinet.net/songremix.wma","[Wma] Pianoboy - The truth that you leave");
 // [T1] 
-mkList("http://aqswdefrgt.myweb.hinet.net/105days.wma","[Wma] Pianoboy - ²Ä105¤Ñ");
+mkList("http://aqswdefrgt.myweb.hinet.net/105days.wma","[Wma] Pianoboy - ç¬¬105å¤©");
 // [T1] 
-mkList("http://w13.loxa.com.tw/fxm20144/Canon(O2Version).wma","[Wma] ¥d¹ACanon (O2 Version)");
+mkList("http://w13.loxa.com.tw/fxm20144/Canon(O2Version).wma","[Wma] å¡è¾²Canon (O2 Version)");
 // [T1] 
 mkList("http://fhcrc.twbbs.org/~lf23015888/music/Missing you.mp3","[MP3] Missing you(O2 Version)");
 // [T1] 
@@ -79,162 +79,162 @@ mkList("http://fhcrc.twbbs.org/~lf23015888/music/Duel(O2Version).wma","[Wma] Due
 // [T1] 
 mkList("http://fhcrc.twbbs.org/~lf23015888/music/Lovable Times.wma","[Wma] Lovable Times(O2 Version)");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/The%20Blood%20Pledge.mp3","[MP3] Lineage µn¤J");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/The%20Blood%20Pledge.mp3","[MP3] Lineage ç™»å…¥");
 // [T14] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/0.mid","[Midi] ¤Ñ°óÀs¤§¨¦");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/0.mid","[Midi] å¤©å ‚é¾ä¹‹è°·");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Night of Kismet.mp3","[MP3] Lineage ·s¤â§ø²ø");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Night of Kismet.mp3","[MP3] Lineage æ–°æ‰‹æ‘èŽŠ");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/A New Hope.mp3","[MP3] Lineage »¡¸Ü¤§®q");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/A New Hope.mp3","[MP3] Lineage èªªè©±ä¹‹å³¶");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Recluse.mp3","[MP3] Lineage ´¶³q³°¦a");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Recluse.mp3","[MP3] Lineage æ™®é€šé™¸åœ°");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Desperate Moment.mp3","[MP3] Lineage ¦a¤UºÊº»");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Desperate Moment.mp3","[MP3] Lineage åœ°ä¸‹ç›£ç„");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/The Thing.mp3","[MP3] Lineage ¨M¾Ô");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/The Thing.mp3","[MP3] Lineage æ±ºæˆ°");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Your Wish.mp3","[MP3] Lineage §Aªº¹Ú");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Your Wish.mp3","[MP3] Lineage ä½ çš„å¤¢");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Moonlight.mp3","[MP3] Lineage ¥@¬É¾ð");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Moonlight.mp3","[MP3] Lineage ä¸–ç•Œæ¨¹");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/All Our Wants.mp3","[MP3] Lineage ©_©¥");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/All Our Wants.mp3","[MP3] Lineage å¥‡å·–");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/IF¡K.mp3","[MP3] Lineage ¦pªG...");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/IFâ€¦.mp3","[MP3] Lineage å¦‚æžœ...");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Under Siege.mp3","[MP3] Lineage ¦å·ù¾Ôª§");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Under Siege.mp3","[MP3] Lineage è¡€ç›Ÿæˆ°çˆ­");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/The Man of Honor.mp3","[MP3] Lineage ¨º¦ì­^¶¯");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/The Man of Honor.mp3","[MP3] Lineage é‚£ä½è‹±é›„");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/The Other Side  .mp3","[MP3] Lineage ¦a¤UºÊº»II");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/The Other Side  .mp3","[MP3] Lineage åœ°ä¸‹ç›£ç„II");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Beat Down.mp3","[MP3] Lineage ¨Fºz");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Beat Down.mp3","[MP3] Lineage æ²™æ¼ ");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Absolute Force.mp3","[MP3] Lineage ¶ÂÃM¥DÃD¦±");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Absolute Force.mp3","[MP3] Lineage é»‘é¨Žä¸»é¡Œæ›²");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Stargaze.mp3","[MP3] Lineage ®ÈÀ]");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Stargaze.mp3","[MP3] Lineage æ—…é¤¨");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/What's that.mp3","[MP3] Lineage °g±¦");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/What's that.mp3","[MP3] Lineage è¿·æƒ˜");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Vagabonds.mp3","[MP3] Lineage ¯S®í¨¤¦â¼Ö");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Vagabonds.mp3","[MP3] Lineage ç‰¹æ®Šè§’è‰²æ¨‚");
 // [T1] 
-mkList("http://fhcrc.twbbs.org/~lf23015888/music/Eternally.mp3","[MP3] Lineage µn¥X");
+mkList("http://fhcrc.twbbs.org/~lf23015888/music/Eternally.mp3","[MP3] Lineage ç™»å‡º");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/44.mid","[Midi] ©PªN­Û - ·¬ (²Ã)");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/44.mid","[Midi] å‘¨å‚‘å€« - æ¥“ (ç¬›)");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/45.mid","[Midi] ©PªN­Û - ·¬");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/45.mid","[Midi] å‘¨å‚‘å€« - æ¥“");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/46.mid","[Midi] ©PªN­Û - Às±²­·");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/46.mid","[Midi] å‘¨å‚‘å€« - é¾æ²é¢¨");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/47.mid","[Midi] ©PªN­Û - ©]¦± (²Ã)");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/47.mid","[Midi] å‘¨å‚‘å€« - å¤œæ›² (ç¬›)");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/48.mid","[Midi] ©PªN­Û - ¤@¸ô¦V¥_");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/48.mid","[Midi] å‘¨å‚‘å€« - ä¸€è·¯å‘åŒ—");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/49.mid","[Midi] ¥ú¨} - ³£¬O§A");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/49.mid","[Midi] å…‰è‰¯ - éƒ½æ˜¯ä½ ");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/50.mid","[Midi] ªL«T³Ç - ±ä¾Þ");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/50.mid","[Midi] æž—ä¿Šå‚‘ - æ›¹æ“");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/51.mid","[Midi] ©P¶Ç¶¯ - ¦A¨£¥_·¥³·");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/51.mid","[Midi] å‘¨å‚³é›„ - å†è¦‹åŒ—æ¥µé›ª");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/42.mid","[Midi] ¾÷°Ê¾ÔÄ¥ ¥DÃD¦±");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/42.mid","[Midi] æ©Ÿå‹•æˆ°è‰¦ ä¸»é¡Œæ›²");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/41.mid","[Midi] F.I.R - ¤d¦~¤§ÅÊ");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/41.mid","[Midi] F.I.R - åƒå¹´ä¹‹æˆ€");
 // [T1] 
 mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/40.midi","[Midi] MISS1");
 // [T1] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/36.mid","[Midi] ªL¨Ì±á - ©t³æ¥_¥b²y");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/36.mid","[Midi] æž—ä¾æ™¨ - å­¤å–®åŒ—åŠçƒ");
 // [T1] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/37.mid","[Midi] ªL¨Ì±á - ©t³æ¥_¥b²y2");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/37.mid","[Midi] æž—ä¾æ™¨ - å­¤å–®åŒ—åŠçƒ2");
 // [T1] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/38.mid","[Midi] ¥xÆW¤H¹ØªüÀs¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/38.mid","[Midi] å°ç£äººå£½é˜¿é¾ä¸»é¡Œæ›²");
 // [T1] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/NEWSTAR.mid","[Midi] ©PªN­Û - ¬P´¸");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/NEWSTAR.mid","[Midi] å‘¨å‚‘å€« - æ˜Ÿæ™´");
 // [T1] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/32.mid","[Midi] ©P¶Ç¶¯ - ¦³¨S¦³¤@­ººq·|Åý§A·Q°_§Ú");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/32.mid","[Midi] å‘¨å‚³é›„ - æœ‰æ²’æœ‰ä¸€é¦–æ­Œæœƒè®“ä½ æƒ³èµ·æˆ‘");
 // [T1] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/33.mid","[Midi] ©PªN­Û - ¤C¨½­»");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/33.mid","[Midi] å‘¨å‚‘å€« - ä¸ƒé‡Œé¦™");
 // [T1] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/34.mid","[Midi] ©PªN­Û - ÂÇ¤f");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/34.mid","[Midi] å‘¨å‚‘å€« - è—‰å£");
 // [T1] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/35.mid","[Midi] ©PªN­Û - ¶é¹C·|");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/35.mid","[Midi] å‘¨å‚‘å€« - åœ’éŠæœƒ");
 // [T2] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/windows_95_theme.mid","[Midi] Windows95 - ¼s§i¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/windows_95_theme.mid","[Midi] Windows95 - å»£å‘Šä¸»é¡Œæ›²");
 // [T3] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/2.mid","[Midi] ³\¯øªå - ²\®ü");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/2.mid","[Midi] è¨±èŒ¹èŠ¸ - æ·šæµ·");
 // [T4] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/3.mid","[Midi] §õ«Ø´_ - Àsªº¶Ç¤H");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/3.mid","[Midi] æŽå»ºå¾© - é¾çš„å‚³äºº");
 // [T5] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/4.mid","[Midi] ©P¶Ç¶¯ - «¢ÂÄ¶®µX");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/4.mid","[Midi] å‘¨å‚³é›„ - å“ˆè–©é›…çª");
 // [T6] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/5.mid","[Midi] ©P¶Ç¶¯ - ¶À©ü");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/5.mid","[Midi] å‘¨å‚³é›„ - é»ƒæ˜");
 // [T7] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/6.mid","[Midi] ©P¶Ç¶¯ - §Ñ°O");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/6.mid","[Midi] å‘¨å‚³é›„ - å¿˜è¨˜");
 // [T8] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/7.mid","[Midi] ©PªN­Û - ªF­·¯}");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/7.mid","[Midi] å‘¨å‚‘å€« - æ±é¢¨ç ´");
 // [T9] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/1.mid","[Midi] ©PªN­Û&·Å´P - «Î³»");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/1.mid","[Midi] å‘¨å‚‘å€«&æº«åµ - å±‹é ‚");
 // [T10] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/8.mid","[Midi] ©PªN­Û - ­y¸ñ");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/8.mid","[Midi] å‘¨å‚‘å€« - è»Œè·¡");
 // [T11] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/9.mid","[Midi] ©PªN­Û - ¥Lªº·û¤ò");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/9.mid","[Midi] å‘¨å‚‘å€« - ä»–çš„ç«æ¯›");
 // [T12] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/11.mid","[Midi] ©PªN­Û - Â²³æ·R");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/11.mid","[Midi] å‘¨å‚‘å€« - ç°¡å–®æ„›");
 // [T14] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/12.mid","[¥d³qMidi] ¤CÀs¯] - ³Ìªì¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/12.mid","[å¡é€šMidi] ä¸ƒé¾ç  - æœ€åˆä¸»é¡Œæ›²");
 // [T15] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/17.mid","[¥d³qMidi] ¤p¬õ¨§ - ³Ìªì¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/17.mid","[å¡é€šMidi] å°ç´…è±† - æœ€åˆä¸»é¡Œæ›²");
 // [T16] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/13.mid","[¥d³qMidi] ÄéÄx°ª¤â - ²Ä¤G¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/13.mid","[å¡é€šMidi] çŒç±ƒé«˜æ‰‹ - ç¬¬äºŒä¸»é¡Œæ›²");
 // [T17] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/18.mid","[¥d³qMidi] ¤p¬õ¨§ - ¤ù§À¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/18.mid","[å¡é€šMidi] å°ç´…è±† - ç‰‡å°¾æ›²");
 // [T18] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/14.mid","[¥d³qMidi] ®w¬¥Å]ªk¨Ï - ³Ìªì¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/14.mid","[å¡é€šMidi] åº«æ´›é­”æ³•ä½¿ - æœ€åˆä¸»é¡Œæ›²");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/52.mid","[¥d³qMidi] ®w¬¥Å]ªk¨Ï - ¥DÃD¦±2");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/52.mid","[å¡é€šMidi] åº«æ´›é­”æ³•ä½¿ - ä¸»é¡Œæ›²2");
 // [T19] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/19.mid","[¥d³qMidi] ¤ÑªÅ¤§«° - ¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/19.mid","[å¡é€šMidi] å¤©ç©ºä¹‹åŸŽ - ä¸»é¡Œæ›²");
 // [T21] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/20.mid","[¥d³qMidi] ·s¥@¬öºÖ­µ¾Ô¤h - ³Ìªì¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/20.mid","[å¡é€šMidi] æ–°ä¸–ç´€ç¦éŸ³æˆ°å£« - æœ€åˆä¸»é¡Œæ›²");
 // [T20] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/15.mid","[¹CÀ¸Midi] ¶W¯Åº¿²ú - ¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/15.mid","[éŠæˆ²Midi] è¶…ç´šç‘ªèŽ‰ - ä¸»é¡Œæ›²");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/53.mid","[¹CÀ¸Midi] ¼ö¦å¶i¦æ¦± ¥DÃD¦±");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/53.mid","[éŠæˆ²Midi] ç†±è¡€é€²è¡Œæ›² ä¸»é¡Œæ›²");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/54.mid","[¹CÀ¸Midi] ¼ö¦å°ª®Õ ¹CÀ¸¦±1");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/54.mid","[éŠæˆ²Midi] ç†±è¡€é«˜æ ¡ éŠæˆ²æ›²1");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/57.mid","[¹CÀ¸Midi] ¼ö¦å°ª®Õ ¥DÃD¦±");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/57.mid","[éŠæˆ²Midi] ç†±è¡€é«˜æ ¡ ä¸»é¡Œæ›²");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/55.mid","[¹CÀ¸Midi] ¼ö¦å°ª®Õ ¹CÀ¸¦±2");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/55.mid","[éŠæˆ²Midi] ç†±è¡€é«˜æ ¡ éŠæˆ²æ›²2");
 // [T1] 
-mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/56.mid","[¹CÀ¸Midi] ¼ö¦å°ª®Õ Å]¤ý¦±");
+mkList("http://w9.loxa.edu.tw/lf2301588820/my/NiceMidi/56.mid","[éŠæˆ²Midi] ç†±è¡€é«˜æ ¡ é­”çŽ‹æ›²");
 // [T22] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/16.mid","[¹CÀ¸Midi] ¤CÄ_´M¿Ñ - ¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/16.mid","[éŠæˆ²Midi] ä¸ƒå¯¶å°‹è¬€ - ä¸»é¡Œæ›²");
 // [T23] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/21.mid","[¥d³qMidi] ¯«©_Ä_¨© - ³Ìªì¥DÃD¦±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/21.mid","[å¡é€šMidi] ç¥žå¥‡å¯¶è² - æœ€åˆä¸»é¡Œæ›²");
 // [T24] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/22.mid","[Midi] ±iµ½¬° - ¥¢¤ßºÆ ");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/22.mid","[Midi] å¼µå–„ç‚º - å¤±å¿ƒç˜‹ ");
 // [T25] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/23.mid","[Midi] ±iµ½¬° - ¥¢¤ßºÆ");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/23.mid","[Midi] å¼µå–„ç‚º - å¤±å¿ƒç˜‹");
 // [T26] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/friends.mid","[Midi] ©PµØ°· - ªB¤Í");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/friends.mid","[Midi] å‘¨è¯å¥ - æœ‹å‹");
 // [T27] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/24.mid","[Midi] ¼B¼wµØ&¤p¶Â&§d©v¾Ë - ²Â¤p«Ä");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/24.mid","[Midi] åŠ‰å¾·è¯&å°é»‘&å³å®—æ†² - ç¬¨å°å­©");
 // [T28] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/Ths_your_love1999.mid","[Midi] ÁÂ¾^¾W - ÁÂÁÂ§Aªº·R1999");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/Ths_your_love1999.mid","[Midi] è¬éœ†é‹’ - è¬è¬ä½ çš„æ„›1999");
 // [T29] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/25.mid","[Midi] ¤ý¤O§» - °ß¤@");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/25.mid","[Midi] çŽ‹åŠ›å® - å”¯ä¸€");
 // [T30] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/26.mid","[Midi] ³\²Ð¬v - ªá­»");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/26.mid","[Midi] è¨±ç´¹æ´‹ - èŠ±é¦™");
 // [T31] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/27.mid","[Midi] ±i»à²[ - ´J¨¥");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/27.mid","[Midi] å¼µéŸ¶æ¶µ - å¯“è¨€");
 // [T32] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/28.mid","[Midi] ³\²Ð¬v - ªá­»");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/28.mid","[Midi] è¨±ç´¹æ´‹ - èŠ±é¦™");
 // [T33] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/29.mid","[Midi] ¤ý¤ß­â - ·R§A");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/29.mid","[Midi] çŽ‹å¿ƒå‡Œ - æ„›ä½ ");
 // [T34] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/ourlove.mid","[Midi] F.I.R - §Ú­Ìªº·R");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/ourlove.mid","[Midi] F.I.R - æˆ‘å€‘çš„æ„›");
 // [T35] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/30.mid","[Midi] ­SÞ³µX - ¥i¤£¥i¥H¤£«i´±");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/30.mid","[Midi] èŒƒç‘‹çª - å¯ä¸å¯ä»¥ä¸å‹‡æ•¢");
 // [T36] 
-mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/31.mid","[Midi] ­SÞ³µX - ³Ìªìªº¹Ú·Q");
+mkList("http://w9.loxa.com.tw/lf2301588820/my/NiceMidi/31.mid","[Midi] èŒƒç‘‹çª - æœ€åˆçš„å¤¢æƒ³");
 
 //-->

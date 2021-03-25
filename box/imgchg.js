@@ -1,6 +1,6 @@
 <!--
 //
-// ¡½ ¶i¦æ°ÊºA«ö¶s¹ÏÀÉªº¤Á´«°Ê§@
+// â–  é€²è¡Œå‹•æ…‹æŒ‰éˆ•åœ–æª”çš„åˆ‡æ›å‹•ä½œ
 //
 
 toggleKey = new Object();
@@ -15,14 +15,14 @@ function imgChange(id,act){
  if(document.images){ document.images[id].src = eval("img." + id + toggleKey[act] + ".src");}
 }
 
-// ·í³o¬qµ{¦¡½XÀ³¥Î¨ì¼½©ñ¾¹¨Ï¥Î®É¡G(exobud.js)
-// ¥H¨ç¦¡ imgChange('«ö¶sÃÑ§O¦WºÙ',0) ¶i¦æªº°Ê§@§Y¨Ï¥Î "off" ªº¹ÏÀÉ¡F
-// ¥H¨ç¦¡ imgChange('«ö¶sÃÑ§O¦WºÙ',1) ¶i¦æªº°Ê§@§Y¨Ï¥Î "on"  ªº¹ÏÀÉ¡C
+// ç•¶é€™æ®µç¨‹å¼ç¢¼æ‡‰ç”¨åˆ°æ’­æ”¾å™¨ä½¿ç”¨æ™‚ï¼š(exobud.js)
+// ä»¥å‡½å¼ imgChange('æŒ‰éˆ•è­˜åˆ¥åç¨±',0) é€²è¡Œçš„å‹•ä½œå³ä½¿ç”¨ "off" çš„åœ–æª”ï¼›
+// ä»¥å‡½å¼ imgChange('æŒ‰éˆ•è­˜åˆ¥åç¨±',1) é€²è¡Œçš„å‹•ä½œå³ä½¿ç”¨ "on"  çš„åœ–æª”ã€‚
 
 if(document.images){
  img = new Object();
 
- // Åã¥Ü¼½©ñª¬ºAªº Scope °ÊºA¹ÏÀÉ (ÀR¤î¡þÂà°Ê)
+ // é¡¯ç¤ºæ’­æ”¾ç‹€æ…‹çš„ Scope å‹•æ…‹åœ–æª” (éœæ­¢ï¼è½‰å‹•)
  img.scope_off = new Image();
  img.scope_off.src = "./img/scope_off.gif";
  img.scope_on = new Image();

@@ -4,14 +4,14 @@
 <meta name="X" content="X">
 <meta name="ProgId" content="FrontPage.Editor.Document">
 <meta http-equiv="Content-Type" content="text/html; charset=big5">
-<title>¤p§¡¤À¨ÉªÅ¶¡</title>
+<title>å°å‡åˆ†äº«ç©ºé–“</title>
 </head>
 
 <body>
 
 <html>
 <head>
-<title>¤p§¡¤À¨ÉªÅ¶¡ %folder%</title>
+<title>å°å‡åˆ†äº«ç©ºé–“ %folder%</title>
 <style>\n%style%\n</style>
 <link rel="shortcut icon" href="favicon.ico">
 </head>
@@ -19,7 +19,7 @@
 %login-link%
 %loggedin%
 %upload-link%
-<div class=little>¸ê®Æ§¨</div>
+<div class=little>è³‡æ–™å¤¾</div>
 <div class=big>%folder%</div>
 <div class=body>
 %folder-comment%
@@ -27,7 +27,7 @@
 %files%
 </div>
 <div class=little>
-<a href="http://N65C.DSLCITY.NET">¤p§¡ªº¤À¨ÉªÅ¶¡</a>
+<a href="http://N65C.DSLCITY.NET">å°å‡çš„åˆ†äº«ç©ºé–“</a>
 <br>Servertime: %timestamp%
 <br>Uptime: %uptime%
 <br>Build-time: %build-time%
@@ -62,41 +62,41 @@ img { border-style:none }
 .flag { font-weight:bold; font-size:9pt; background:white; color:red; text-align:center; border:1px solid red; }
 
 [login-link]
-<div style="float:right; padding:15px;"><a href="%encoded-folder%~login" class=button><img border=0 align=absbottom src="/~img27"> µn¤J</a></div>
+<div style="float:right; padding:15px;"><a href="%encoded-folder%~login" class=button><img border=0 align=absbottom src="/~img27"> ç™»å…¥</a></div>
 
 [loggedin]
 <div style="float:right; padding:15px;"><span class=button><img border=0 align=absbottom src="/~img27"> 
-  ¨Ï¥ÎªÌ: %user%</span></div>
+  ä½¿ç”¨è€…: %user%</span></div>
 
 [upload-link]
-<div style="float:right; padding:15px;"><a href="%encoded-folder%~upload" class=button><img border=0 align=absbottom src="/~img32"> ¤W¶Ç</a></div>
+<div style="float:right; padding:15px;"><a href="%encoded-folder%~upload" class=button><img border=0 align=absbottom src="/~img32"> ä¸Šå‚³</a></div>
 
 [up]
-<a class=big href="%parent-folder%"><img src="/~img14"> ¤W­¶</a>
+<a class=big href="%parent-folder%"><img src="/~img14"> ä¸Šé </a>
 
 [nofiles]
-<div class=big>µLÀÉ®×</div>
+<div class=big>ç„¡æª”æ¡ˆ</div>
 
 [files]
-<div class=little>%number-folders% ­Ó¸ê®Æ§¨,  %number-files% ­ÓÀÉ®× - ¥»¸ê®Æ§¨ÀÉ®×Á`¦@: %total-size%</div>
+<div class=little>%number-folders% å€‹è³‡æ–™å¤¾,  %number-files% å€‹æª”æ¡ˆ - æœ¬è³‡æ–™å¤¾æª”æ¡ˆç¸½å…±: %total-size%</div>
 <table cellpadding=5>
-<th><a href="%encoded-folder%?sort=n"><span class=column>¦WºÙ</span></a>
-<th><a href="%encoded-folder%?sort=s"><span class=column>®e¶q</span></a>
-<th><a href="%encoded-folder%?sort=t"><span class=column>¤W¶Ç®É¶¡</span></a>
-<th class=column>ÂIÀ»¦¸¼Æ
+<th><a href="%encoded-folder%?sort=n"><span class=column>åç¨±</span></a>
+<th><a href="%encoded-folder%?sort=s"><span class=column>å®¹é‡</span></a>
+<th><a href="%encoded-folder%?sort=t"><span class=column>ä¸Šå‚³æ™‚é–“</span></a>
+<th class=column>é»æ“Šæ¬¡æ•¸
 %list%
 </table>
 <p class=right>
-<a class=little href='%encoded-folder%~files.lst'>ÀÉ®×ºô§}ªí</a>
+<a class=little href='%encoded-folder%~files.lst'>æª”æ¡ˆç¶²å€è¡¨</a>
 
 [file]
 <tr><td class=row>%new% <a href="%item-url%"><img align=top src="/~img_file"> %item-name%</a>%comment%<td class="row right">%item-size%<td class="row right">%item-modified%<td class="row right">%item-dl-count%
 
 [folder]
-<tr><td class=row>%new% <a href="%item-url%"><img align=top src="/~img_folder"> <b>%item-name%</b></a>%comment%<td align=center class=row><i>¸ê®Æ§¨</i><td class="row right">%item-modified%<td class="row right">%item-dl-count%
+<tr><td class=row>%new% <a href="%item-url%"><img align=top src="/~img_folder"> <b>%item-name%</b></a>%comment%<td align=center class=row><i>è³‡æ–™å¤¾</i><td class="row right">%item-modified%<td class="row right">%item-dl-count%
 
 [link]
-<tr><td class=row>%new% <a href="%item-url%"><img align=top src="/~img_link"> <b>%item-name%</b></a>%comment%<td colspan=3 align=center class=row><i>³sµ²</i>
+<tr><td class=row>%new% <a href="%item-url%"><img align=top src="/~img_link"> <b>%item-name%</b></a>%comment%<td colspan=3 align=center class=row><i>é€£çµ</i>
 
 [comment]
 <div class=comment>%item-comment%</div>
@@ -110,18 +110,18 @@ img { border-style:none }
 %content%
 <hr>
 <div style="font-family:tahoma, verdana, arial, helvetica, sans; font-size:9pt;">
-<a href="http://N65C.DSLCITY.NET">¤p§¡ªº¤À¨ÉªÅ¶¡</a>
+<a href="http://N65C.DSLCITY.NET">å°å‡çš„åˆ†äº«ç©ºé–“</a>
 <br>%timestamp%
 </div>
 </body>
 </html>
 
 [not found]
-<h1>ºô­¶¿ù»~©Î¬O§ä¤£¨ìºô­¶ ¥h§Oªº¦a¤è§a!</h1>
-<a href="/">ÂI§Ú¦^¥h</a>
+<h1>ç¶²é éŒ¯èª¤æˆ–æ˜¯æ‰¾ä¸åˆ°ç¶²é  å»åˆ¥çš„åœ°æ–¹å§!</h1>
+<a href="/">é»æˆ‘å›å»</a>
 
 [overload]
-<h1>¦£¸L¤¤©êºp~¤U¦¸¦A¨Ó</h1>
+<h1>å¿™ç¢Œä¸­æŠ±æ­‰~ä¸‹æ¬¡å†ä¾†</h1>
 Please, retry later.
 
 [max contemporary downloads]
@@ -130,9 +130,9 @@ On this server there is a limit on the number of <b>contemporary</b> downloads.
 <br>This limit has been reached. Retry later.
 
 [unauthorized]
-<h1>µLªkµn¤J£¬¡Ö¡Õ!</h1>
-¶i¤J³o¸Ì»İ­n±b¸¹&±K½X
-<br>§Aªº±b¸¹©Î¬O±K½X¿ù»~¤F..
+<h1>ç„¡æ³•ç™»å…¥ã„›ï¼ï¼œ!</h1>
+é€²å…¥é€™è£¡éœ€è¦å¸³è™Ÿ&å¯†ç¢¼
+<br>ä½ çš„å¸³è™Ÿæˆ–æ˜¯å¯†ç¢¼éŒ¯èª¤äº†..
 
 [deny]
 <h1>Unallowed</h1>
@@ -145,7 +145,7 @@ This resource is not accessible.
 [upload]
 <html>
 <head>
-<title>¤p§¡¤À¨ÉªÅ¶¡ %folder%</title>
+<title>å°å‡åˆ†äº«ç©ºé–“ %folder%</title>
 <style>\n%style%\n</style>
 </head>
 <body>
@@ -154,25 +154,25 @@ This resource is not accessible.
 <div style="float:right; padding:15px;">
 <script language="javascript">
 var s1, s2;
-if (window.parent.progress) s1 = '" target=_parent', s2 = 'Ãö³¬';
-else s1 = '+progress"', s2= '¶}±Ò';
-document.write('<a href="%encoded-folder%~upload'+s1+' class=button onClick="if (frm.upbtn.disabled) return false;"><img border=0 align=absbottom src="/~img10"> '+s2+' ¤W¶Çª¬ºA°»´ú</a>');
+if (window.parent.progress) s1 = '" target=_parent', s2 = 'é—œé–‰';
+else s1 = '+progress"', s2= 'é–‹å•Ÿ';
+document.write('<a href="%encoded-folder%~upload'+s1+' class=button onClick="if (frm.upbtn.disabled) return false;"><img border=0 align=absbottom src="/~img10"> '+s2+' ä¸Šå‚³ç‹€æ…‹åµæ¸¬</a>');
 </script>
 </div>
-<div style="float:right; padding:15px;"><a href="%encoded-folder%" target=_parent class=button><img border=0 align=absbottom src="/~img21"> Â÷¶}¤W¶Ç</a></div>
+<div style="float:right; padding:15px;"><a href="%encoded-folder%" target=_parent class=button><img border=0 align=absbottom src="/~img21"> é›¢é–‹ä¸Šå‚³</a></div>
 <div style="margin-top:60px" class=little>folder</div>
 <div class=big>%folder%</div>
 <div class=body>
 <form name=frm action="%encoded-folder%" target=_parent method=post enctype="multipart/form-data" onSubmit="frm.upbtn.disabled=true; return true;">
 %upload-files%
-<input name=upbtn type=submit value="¤W¶ÇÀÉ®×">
+<input name=upbtn type=submit value="ä¸Šå‚³æª”æ¡ˆ">
 </form>
 </div>
 <div class=little>
-<a href="http://N65C.DSLCITY.NET">¤p§¡ªº¤À¨ÉªÅ¶¡</a>
+<a href="http://N65C.DSLCITY.NET">å°å‡çš„åˆ†äº«ç©ºé–“</a>
 <br>Servertime: %timestamp%
 <br>Uptime: %uptime%
-<br>¤W¶Ç¸ê®Æ§¨³Ñ¾lªÅ¶¡: %diskfree%
+<br>ä¸Šå‚³è³‡æ–™å¤¾å‰©é¤˜ç©ºé–“: %diskfree%
 </div>
 </body>
 </html>
@@ -188,28 +188,28 @@ document.write('<a href="%encoded-folder%~upload'+s1+' class=button onClick="if 
 </head>
 <body>
 %loggedin%
-<div style="margin-top:60px" class=little>¸ê®Æ§¨</div>
+<div style="margin-top:60px" class=little>è³‡æ–™å¤¾</div>
 <div class=big>%folder%</div>
 <div class=body>
 %uploaded-files%
 <br><br>
 <a href="%encoded-folder%" target=_parent class=big><img border=0 align=absbottom src="/~img14"> 
-ÂI§Ú¦^¥h</a>
+é»æˆ‘å›å»</a>
 </div>
 <div class=little>
-<a href="http://N65C.DSLCITY.NETt">¤p§¡ªº¤À¨ÉªÅ¶¡</a>
+<a href="http://N65C.DSLCITY.NETt">å°å‡çš„åˆ†äº«ç©ºé–“</a>
 <br>Servertime: %timestamp%
 <br>Uptime: %uptime%
-<br>¤W¶Ç¸ê®Æ§¨³Ñ¾lªÅ¶¡: %diskfree%
+<br>ä¸Šå‚³è³‡æ–™å¤¾å‰©é¤˜ç©ºé–“: %diskfree%
 </div>
 </body>
 </html>
 
 [upload-success]
-<li>%item-name%: <b>¦¨¥\¡I¡I</b> --- %item-size%  (Speed %speed% KB/s)
+<li>%item-name%: <b>æˆåŠŸï¼ï¼</b> --- %item-size%  (Speed %speed% KB/s)
 
 [upload-failed]
-<li>%item-name%: <b>¥¢±Ñ¡Ö¡Õ</b> ---  %reason%
+<li>%item-name%: <b>å¤±æ•—ï¼ï¼œ</b> ---  %reason%
 
 [upload+progress]
 <html>
@@ -240,8 +240,8 @@ body { padding:2px; }
 </style>
 </head>
 <body>
-<div class=big>¤W¶Çª¬ºA°»´ú</div>
-¨C3¬í¨ê·s¤@¦¸
+<div class=big>ä¸Šå‚³ç‹€æ…‹åµæ¸¬</div>
+æ¯3ç§’åˆ·æ–°ä¸€æ¬¡
 <br><br><img src="/~img_graph190x40" style="border:white outset 2px;">
 <div class=body>
 %progress-files%
@@ -251,7 +251,7 @@ body { padding:2px; }
 </html>
 
 [progress-nofiles]
-<div class=big>¨S¦³ªF¦è¥¿¦b¤W¶Ç</div>
+<div class=big>æ²’æœ‰æ±è¥¿æ­£åœ¨ä¸Šå‚³</div>
 
 [progress-upload-file]
 <span class=flag>&nbsp;up&nbsp;</span>

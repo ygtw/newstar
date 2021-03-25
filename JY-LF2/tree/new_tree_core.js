@@ -23,7 +23,7 @@ exttop\" src=\""+IconPath+RootItem[1].replace(/^[\s]+/g,"").replace(/[\s]+$/g,""
 er=0></a></td><td height=\"16\"><div class=\"TreeLink\"><a"+RootLink+" id=\"Link_0\" class=\"T\
 ree_Out\" hidefocus=\"true\">"+RootItem[0]+"</a></div></td></tr></table>"
 
-//¦Û°Ê¸ü¤J¹Ï¥Ü
+//è‡ªå‹•è¼‰å…¥åœ–ç¤º
 var IconTemper = new Array()
 var IconReader = new Array()
 var IconLoader = new Array()
@@ -39,8 +39,8 @@ IconLoader[3] = "new_tree_node_n_0"
 IconLoader[4] = "new_tree_node_n_1"
 IconLoader[5] = "new_tree_node_n_2"
 IconLoader[6] = "new_tree_vert"
-IconLoader[7] = "folder_on"	//¸ê®Æ§¨¶}±Ò¹Ï¥Ü¡A­Y¦³¥²­n½Ğ¦Û¦æ§ó§ï¡C
-IconLoader[8] = "folder_off"	//¸ê®Æ§¨Ãö³¬¹Ï¥Ü¡A­Y¦³¥²­n½Ğ¦Û¦æ§ó§ï¡C
+IconLoader[7] = "folder_on"	//è³‡æ–™å¤¾é–‹å•Ÿåœ–ç¤ºï¼Œè‹¥æœ‰å¿…è¦è«‹è‡ªè¡Œæ›´æ”¹ã€‚
+IconLoader[8] = "folder_off"	//è³‡æ–™å¤¾é—œé–‰åœ–ç¤ºï¼Œè‹¥æœ‰å¿…è¦è«‹è‡ªè¡Œæ›´æ”¹ã€‚
 Collection = IconLoader.join()
 n = IconLoader.length
 for(l=0;l<IconReader.length;l++){
@@ -62,7 +62,7 @@ PreloadIcons[c].src = eval('IconPath+IconLoader[c]+".gif"')
 BuildTree(0,0,0,TmpStr_0.length,false)
 }
 
-//«Ø¥ß¾ğª¬¥Ø¿ı
+//å»ºç«‹æ¨¹ç‹€ç›®éŒ„
 function BuildTree(Step,ToPos,Tree_S,Tree_E,Icon){
 if(eval('TreeTemp_'+ToPos).innerHTML){
 eval('TreeTemp_'+ToPos).style.display = (eval('TreeTemp_'+ToPos).style.display=="block")?
@@ -79,13 +79,13 @@ TmpStr_1 = new Array
 var j = 0, k = 0
 for(i=Tree_S;i<Tree_E;i++){
 TmpStr_0[i] = TmpStr_0[i].replace(/^[\s]+/g,"").replace(/[\s]+$/g,"")
-if(TmpStr_0[i].search("¢u")==Step||TmpStr_0[i].search("¢|")==Step){
+if(TmpStr_0[i].search("â”œ")==Step||TmpStr_0[i].search("â””")==Step){
 TmpStr_1[j] = new Array
 TmpStr_1[j][0] = TmpStr_0[i]
 TmpStr_1[j][1] = k
 j++
 }else
-if(TmpStr_0[i].search("¢u")>Step||TmpStr_0[i].search("¢|")>Step){
+if(TmpStr_0[i].search("â”œ")>Step||TmpStr_0[i].search("â””")>Step){
 k++
 TmpStr_1[j-1][1] = TmpStr_1[j-1][1]+1
 }
@@ -95,7 +95,7 @@ var v = (Tree_S)?
 Tree_S:
 Tree_S+1
 for(i=0;i<TmpStr_1.length;i++){
-NodeItem = TmpStr_1[i][0].replace(/[¢u¢|¢x¡@]/g,"").split(",")
+NodeItem = TmpStr_1[i][0].replace(/[â”œâ””â”‚ã€€]/g,"").split(",")
 VertLine = (i==TmpStr_1.length-1)?
 "":
 "background=\""+IconPath+"new_tree_vert.gif\""
@@ -165,7 +165,7 @@ if(TreeLeft>=0)
 document.body.style.marginLeft = TreeLeft
 TreeScr.startDownload(TreeFile, onDownloadDone)
 }
-document.ondragstart = new Function("return false")	//Ãö³¬©ì¦²
-document.onselectstart = new Function("return false")	//Ãö³¬¿ï¨ú
-document.oncontextmenu = new Function("return false")	//Ãö³¬¥kÁä
+document.ondragstart = new Function("return false")	//é—œé–‰æ‹–æ›³
+document.onselectstart = new Function("return false")	//é—œé–‰é¸å–
+document.oncontextmenu = new Function("return false")	//é—œé–‰å³éµ
 window.onload=DrawTree
